@@ -2,6 +2,7 @@ import React from "react";
 
 import { NavigationContainer } from "@react-navigation/native";
 import RootNavigation from "./src/routes/rootNavigation";
+import { Appearance, AppearanceProvider, useColorScheme } from 'react-native-appearance';
 // import Routes from "./src/routes/routes";
 
 // Redux Stuff
@@ -16,11 +17,13 @@ import RootNavigation from "./src/routes/rootNavigation";
 
 export default function App() {
   return (
-    // <Provider store={store}>
-      <NavigationContainer>
-        <RootNavigation />
-        {/* <Routes /> */}
-      </NavigationContainer>
-    // </Provider>
+    <AppearanceProvider>
+      {/* <Provider store={store}> */}
+        <NavigationContainer>
+          <RootNavigation />
+          {/* <Routes /> */}
+        </NavigationContainer>
+      {/* </Provider> */}
+    </AppearanceProvider>
   );
 }

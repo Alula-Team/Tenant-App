@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, SafeAreaView, FlatList, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, SafeAreaView, FlatList, TouchableOpacity } from "react-native";
 import { Header } from 'react-native-elements';
 
 // Navigation
