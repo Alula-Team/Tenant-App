@@ -7,6 +7,25 @@ const styles = StyleSheet.create({
         height: '100%',
     },
 
+    // Flatlist
+    listCell: {
+        paddingVertical: 20,
+        paddingHorizontal: 25,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    listItem: {
+        color: '#fff', 
+        fontSize: 16, 
+        fontWeight: '600'
+    },
+    listSubItem: {
+        color: '#ffffff80', 
+        fontSize: 15, 
+        fontWeight: '500', 
+        marginTop: 10
+    },
+
     // Service Request Creation
     createRequest: {
         backgroundColor: '#5858FB',
