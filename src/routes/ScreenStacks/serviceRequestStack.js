@@ -4,8 +4,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
-import ServiceRequests from '../containers/serviceRequests/serviceRequests';
-import createRequest from '../containers/serviceRequests/createRequest';
+import ServiceRequests from '../../containers/serviceRequests/serviceRequests';
+import createRequest from '../../containers/serviceRequests/createRequest';
 
 const Stack = createStackNavigator();
 

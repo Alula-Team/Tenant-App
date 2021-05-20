@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { Header } from 'react-native-elements';
 
@@ -13,12 +13,18 @@ import Feather from 'react-native-vector-icons/Feather';
 
 // Styles
 import styles from './auth-styles';
+// import { handlePasswordReset } from '../../firebase/firebase';
 
 
-const ForgotPasswordScreen = (props) => {
+const ForgotPasswordScreen = ({ navigation }) => {
 
-    const navigation = useNavigation();
-    const { control, handleSubmit } = useForm();
+    const [email, setEmail] = useState('');
+
+    const onSubmit = () => {
+        handlePasswordReset(email);
+        setEmail(email);
+        navigation.navigate('Login');
+    }
 
     return (
         <View style={styles.container}>
@@ -50,37 +56,32 @@ const ForgotPasswordScreen = (props) => {
 
             {/* Form */}
             <View style={styles.form}>
-                <Controller
-                    control={control}
-                    render={({ onChange, value }) => (  
-                        <View style={styles.emailInput}>
-                            <Feather 
-                                name={'mail'}
-                                size={22.5}
-                                style={{alignSelf: 'center', marginHorizontal: 15, color:'#ffffff50'}}
-                            />
-                            <TextInput
-                                style={styles.email}
-                                placeholder='Email'
-                                placeholderTextColor='#ffffff50'
-                                autoCapitalize='none'
-                                autoCompleteType={'email'}
-                                autoCorrect={false}
-                                clearButtonMode={'while-editing'}
-                                keyboardType={'email-address'}
-                                keyboardAppearance='dark'
-                                // value={}
-                                // onChangeText={}
-                            />
-                        </View>
-                    )}
-                    name="email"
-                    rules={{ required: true }}
-                    defaultValue=""
-                />
+                {/* Email */}
+                <View style={styles.authFieldContainer}>
+                    <View style={styles.emailInput}>
+                        <Feather 
+                            name={'mail'}
+                            size={22.5}
+                            style={{alignSelf: 'center', marginHorizontal: 15, color:'#ffffff50'}}
+                        />
+                        <TextInput
+                            style={styles.email}
+                            placeholder='Email'
+                            placeholderTextColor='#ffffff50'
+                            autoCapitalize='none'
+                            autoCompleteType='email'
+                            autoCorrect={false}
+                            clearButtonMode={'while-editing'}
+                            keyboardType={'email-address'}
+                            keyboardAppearance='dark'
+                            onChangeText={(email) => setEmail(email)}
+                            value={email}
+                        />
+                    </View>
+                </View>
                 
                 {/* Sign In Button */}
-                <TouchableOpacity style={styles.continueButton}>
+                <TouchableOpacity style={styles.continueButton} onPress={onSubmit}>
                     <Text style={styles.submitText}>Submit</Text>
                 </TouchableOpacity>
             </View>

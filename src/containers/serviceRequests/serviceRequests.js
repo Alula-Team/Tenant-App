@@ -24,38 +24,38 @@ const ServiceRequests = () => {
             <View style={styles.container}>
                 {/* Header */}
                 <Header
-                    placement={"left"}
-                    centerComponent={{
-                        text: "Service Requests",
-                        style: {
-                        color: "#fff",
-                        fontWeight: "bold",
-                        fontSize: 25,
+                placement={"left"}
+                centerComponent={{
+                    text: "Service Requests",
+                    style: {
+                    color: "#fff",
+                    fontWeight: "bold",
+                    fontSize: 25,
+                    paddingTop: 30,
+                    },
+                }}
+                rightComponent={
+                    <>
+                    <Icon
+                        name="plus"
+                        type="feather"
+                        color="#fff"
+                        size={25}
+                        iconStyle={{
                         paddingTop: 30,
-                        },
-                    }}
-                    rightComponent={
-                        <>
-                        <Icon
-                            name="plus"
-                            type="feather"
-                            color="#fff"
-                            size={25}
-                            iconStyle={{
-                            paddingTop: 30,
-                            paddingRight: 20,
-                            paddingBottom: 10,
-                            }}
-                            onPress={() => navigation.navigate("AddRequest")}
-                        />
-                        </>
-                    }
-                    containerStyle={{
-                        backgroundColor: "#09061C",
-                        justifyContent: "space-around",
-                        borderBottomWidth: 0,
-                        top: 0
-                    }}
+                        paddingRight: 20,
+                        paddingBottom: 10,
+                        }}
+                        onPress={() => navigation.navigate("AddRequest")}
+                    />
+                    </>
+                }
+                containerStyle={{
+                    backgroundColor: "#09061C",
+                    justifyContent: "space-around",
+                    borderBottomWidth: 0,
+                    top: 0
+                }}
                 />
                 {/* END Header */}
 

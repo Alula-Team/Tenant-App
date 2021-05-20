@@ -1,27 +1,37 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import React, { useState} from 'react';
+import { View, Text, TextInput, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import { Header } from 'react-native-elements';
-
-// Forms
-import { useForm, Controller } from "react-hook-form";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import firebase from 'firebase';
 
 // Icons
 import Feather from 'react-native-vector-icons/Feather';
 
-// Navigation
-import { useNavigation } from '@react-navigation/native';
+// Firebase
+import { registration } from '../../firebase/firebase';
 
 // Style Sheet
 import styles from './auth-styles';
 
-const RegisterScreen = (props) => {
+const RegisterScreen = ({ navigation }) => {
 
-    const navigation = useNavigation();
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const { control, handleSubmit } = useForm();
+    const emptyState = () => {
+        setUsername('');
+        setEmail('');
+        setPassword('');
+    };
+
+    const onSubmit = () => {
+        registration( email, password, username );
+        emptyState();
+    }
 
     return (
-        <View style={styles.container}>
+        <KeyboardAwareScrollView style={styles.container}>
             <Header
                 backgroundColor={'transparent'}
                 barStyle={'light-content'}
@@ -35,101 +45,92 @@ const RegisterScreen = (props) => {
             <Text style={styles.title}>Create Account</Text>
             <Text style={styles.subTitle}>Sign up to get started!</Text>
 
-            {/* Form */}
+            {/* Register Form */}
             <View style={styles.form}>
-                <Controller
-                control={control}
-                render={({ onChange, value }) => (
-                    <View style={styles.nameInput}>
+                {/* USERNAME */}
+                <View style={styles.authFieldContainer}>
+                    <View style={styles.emailInput}>
                         <Feather 
                             name={'user'}
                             size={22.5}
                             style={{alignSelf: 'center', marginHorizontal: 15, color:'#ffffff50'}}
                         />
                         <TextInput
-                            style={styles.name}
-                            placeholder='Full Name'
+                            style={styles.email}
+                            placeholder='Company or Landlord Name'
                             placeholderTextColor='#ffffff50'
                             autoCapitalize='words'
-                            autoCompleteType='name'
+                            autoCompleteType='off'
                             autoCorrect={false}
                             clearButtonMode={'while-editing'}
+                            keyboardType={'default'}
                             keyboardAppearance='dark'
-                            // value={}
-                            // onChangeText={}
+                            // onBlur={onBlur}
+                            onChangeText={(name) => setUsername(name)}
+                            value={username}
                         />
                     </View>
-                    )}
-                    name="name"
-                    rules={{ required: true }}
-                    defaultValue=""
-                />
+                </View>
+                    
 
-                <Controller
-                    control={control}
-                    render={({ onChange, value }) => (
-                        <View style={styles.emailInput}>
-                            <Feather 
-                                name={'mail'}
-                                size={22.5}
-                                style={{alignSelf: 'center', marginHorizontal: 15, color:'#ffffff50'}}
-                            />
-                            <TextInput
-                                style={styles.email}
-                                placeholder='Email'
-                                placeholderTextColor='#ffffff50'
-                                autoCapitalize='none'
-                                autoCompleteType='email'
-                                autoCorrect={false}
-                                clearButtonMode={'while-editing'}
-                                keyboardType={'email-address'}
-                                keyboardAppearance='dark'
-                                // value={}
-                                // onChangeText={}
-                            />
-                        </View>
-                    )}
-                    name="email"
-                    rules={{ required: true }}
-                    defaultValue=""
-                />
+                {/* EMAIL */}
+                <View style={styles.authFieldContainer}>
+                    <View style={styles.emailInput}>
+                        <Feather 
+                            name={'mail'}
+                            size={22.5}
+                            style={{alignSelf: 'center', marginHorizontal: 15, color:'#ffffff50'}}
+                        />
+                        <TextInput
+                            style={styles.email}
+                            placeholder='Email'
+                            placeholderTextColor='#ffffff50'
+                            autoCapitalize='none'
+                            autoCompleteType='email'
+                            autoCorrect={false}
+                            clearButtonMode={'while-editing'}
+                            keyboardType={'email-address'}
+                            keyboardAppearance='dark'
+                            // onBlur={onBlur}
+                            onChangeText={(email) => setEmail(email)}
+                            value={email}
+                        />
+                    </View>
+                </View>
+                    
 
-                <Controller
-                    control={control}
-                    render={({ onChange, value }) => (  
-                        <View style={styles.passwordInput}>
-                            <Feather 
-                                name={'lock'}
-                                size={22.5}
-                                style={{alignSelf: 'center', marginHorizontal: 15, color:'#ffffff50'}}
-                            />
-                            <TextInput
-                                style={styles.password}
-                                placeholder='Password'
-                                placeholderTextColor='#ffffff50'
-                                secureTextEntry={true}
-                                autoCapitalize='none'
-                                autoCompleteType='password'
-                                autoCorrect={false}
-                                clearButtonMode={'while-editing'}
-                                returnKeyType={'done'}
-                                keyboardAppearance='dark'
-                                // value={}
-                                // onChangeText={}
-                            />
-                        </View>
-                    )}
-                    name="password"
-                    rules={{ required: true }}
-                    defaultValue=""
-                />
+                {/* PASSWORD */}
+                <View style={styles.authFieldContainer}>
+                    <View style={styles.passwordInput}>
+                        <Feather 
+                            name={'lock'}
+                            size={22.5}
+                            style={{alignSelf: 'center', marginHorizontal: 15, color:'#ffffff50'}}
+                        />
+                        <TextInput
+                            style={styles.password}
+                            placeholder='Password'
+                            placeholderTextColor='#ffffff50'
+                            secureTextEntry={true}
+                            autoCapitalize='none'
+                            autoCompleteType='password'
+                            autoCorrect={false}
+                            clearButtonMode={'while-editing'}
+                            returnKeyType={'done'}
+                            keyboardAppearance='dark'
+                            // onBlur={onBlur}
+                            onChangeText={(password) => setPassword(password)}
+                            value={password}
+                        />
+                    </View>
+                </View>
 
-                {/* Sign In Button */}
+                {/* Sign Up Button */}
                 <TouchableOpacity 
                     style={styles.continueButton}
-                    onPress={() => navigation.navigate('Onboarding')}
+                    onPress={onSubmit}
                 >
-                    <Text style={styles.submitText}>Next</Text>
+                    <Text style={styles.submitText}>Sign Up</Text>
                 </TouchableOpacity>
 
                 {/* Terms & Conditions */}
@@ -138,7 +139,7 @@ const RegisterScreen = (props) => {
                 </Text>
             </View>
 
-            {/* Register Button */}
+            {/* Login Button */}
             <TouchableOpacity 
                 style={styles.otherAuthButton}
                 onPress={() => navigation.navigate('Login')}
@@ -147,7 +148,7 @@ const RegisterScreen = (props) => {
                     Already have an account? <Text style={{fontWeight: '800'}}>Login Instead</Text>
                 </Text>
             </TouchableOpacity>
-        </View>
+        </KeyboardAwareScrollView>
     );
 }
 

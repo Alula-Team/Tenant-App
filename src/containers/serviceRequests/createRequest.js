@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, SafeAreaView, FlatList, TouchableOpacity, TextInput } from "react-native";
 import { Header, Icon } from "react-native-elements";
 import RNPickerSelect from 'react-native-picker-select';
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 // Forms
 import { useForm, Controller } from "react-hook-form";
@@ -68,11 +69,11 @@ const CreateServiceRequest = () => {
         }
 
     return(
-        <View style={styles.container}>
+        <KeyboardAwareScrollView style={styles.container}>
             {/* Header */}
             <Header 
                 centerComponent={{ 
-                    text: 'Add Transaction', 
+                    text: 'Create Request', 
                     style: { 
                         color: '#fff', 
                         fontWeight: 'bold', 
@@ -108,13 +109,14 @@ const CreateServiceRequest = () => {
             />
 
                     {/* Repair Type */}
-                    {/* <Controller
+                    <Controller
                         control={control}
                         render={({ onChange, value }) => (
                             <RNPickerSelect
                                 placeholder={RepairTypePlaceholder}
                                 style={pickerStyles}
                                 onValueChange={value => onChange(value)}
+                                value={value}
                                 items={[
                                     { label: 'A/C', value: 'A/C', color: 'white' },
                                     { label: 'Damage', value: 'Damage', color: 'white' },
@@ -131,16 +133,17 @@ const CreateServiceRequest = () => {
                         name="repairType"
                         rules={{ required: true }}
                         defaultValue=""
-                    /> */}
+                    />
 
                     {/* Location of Problem Selector */}
-                    {/* <Controller
+                    <Controller
                         control={control}
                         render={({ onChange, value }) => (
                             <RNPickerSelect
                                 placeholder={LocationPlaceholder}
                                 style={pickerStyles}
                                 onValueChange={value => onChange(value)}
+                                value={value}
                                 items={[
                                     { label: 'Back Yard', value: 'Back Yard', color: 'white' },
                                     { label: 'Dining Room', value: 'Dining Room', color: 'white' },
@@ -150,9 +153,9 @@ const CreateServiceRequest = () => {
                                     { label: 'Kitchen', value: 'Kitchen', color: 'white' },
                                     { label: 'Laundry Area', value: 'Laundry Area', color: 'white' },
                                     { label: 'Living Room', value: 'Living Room', color: 'white' },
-                                    { label: 'Master Bathroom', value: 'Master Bathroom', color: 'white' },
-                                    { label: 'Master Bedroom', value: 'Master Bedroom', color: 'white' },
                                     { label: 'Other', value: 'Other', color: 'white' },
+                                    { label: 'Primary Bathroom', value: 'Master Bathroom', color: 'white' },
+                                    { label: 'Primary Bedroom', value: 'Master Bedroom', color: 'white' },
                                     { label: 'Secondary Bathroom', value: 'Secondary Bathroom', color: 'white'},
                                     { label: 'Secondary Bedroom', value: 'Secondary Bedroom', color: 'white' },
                                 ]}
@@ -161,11 +164,11 @@ const CreateServiceRequest = () => {
                         name="repairType"
                         rules={{ required: true }}
                         defaultValue=""
-                    /> */}
+                    />
 
 
                     {/* Optional Text Area */}
-                    {/* <Controller
+                    <Controller
                         control={control}
                         render={({ onChange, value }) => (
                             <View style={styles.addInputContainer}>
@@ -185,8 +188,8 @@ const CreateServiceRequest = () => {
                         name="tenantName"
                         rules={{ required: true }}
                         defaultValue=""
-                    /> */}
-        </View>
+                    />
+        </KeyboardAwareScrollView>
     );
 }
 

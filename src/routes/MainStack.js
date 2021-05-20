@@ -4,16 +4,15 @@ import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 // Dashboard
-import Dashboard from './dashboardStack';
+import Dashboard from '../routes/ScreenStacks/dashboardStack';
 
 // Service Requests
-import ServiceRequests from './serviceRequestStack';
+import ServiceRequests from '../routes/ScreenStacks/serviceRequestStack';
 
 // Notifications
 
 
 // Settings
-// import Settings from '../routes/settingsStack';
 
 // Icons
 import Icon from 'react-native-vector-icons/Feather';
