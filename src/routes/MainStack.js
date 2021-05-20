@@ -10,9 +10,10 @@ import Dashboard from '../routes/ScreenStacks/dashboardStack';
 import ServiceRequests from '../routes/ScreenStacks/serviceRequestStack';
 
 // Notifications
-
+import Notifications from '../routes/ScreenStacks/notificationsStack';
 
 // Settings
+import Settings from '../routes/ScreenStacks/settingsStack';
 
 // Icons
 import Icon from 'react-native-vector-icons/Feather';
@@ -50,7 +51,7 @@ const RootNavigation = (props) => {
                         )
                     }}
                 />
-                {/* <Tab.Screen 
+                <Tab.Screen 
                     name={'Notifications'}
                     component={Notifications}
                     options={{
@@ -62,8 +63,8 @@ const RootNavigation = (props) => {
                             />
                         )
                     }}
-                /> */}
-                {/* <Tab.Screen 
+                />
+                <Tab.Screen 
                     name={'Settings'}
                     component={Settings}
                     options={{
@@ -75,7 +76,7 @@ const RootNavigation = (props) => {
                             />
                         )
                     }}
-                /> */}
+                />
             </Tab.Navigator>
         </>
     );

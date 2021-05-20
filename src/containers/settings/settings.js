@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import { Header } from 'react-native-elements';
 
 // Firebase
-import { loggingOut } from '../../firebase/firebase';
+// import { loggingOut } from '../../firebase/firebase';
 
 // Navigation
 import { useNavigation } from '@react-navigation/native';
@@ -19,13 +19,13 @@ const Settings = () => {
     const navigation = useNavigation();
 
     // Sign Out
-    async function handleSignOut() {
-        try {
-          await loggingOut();
-        } catch (error) {
-          console.log(error);
-        }
-    }
+    // async function handleSignOut() {
+    //     try {
+    //       await loggingOut();
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    // }
     
     return (
         <>
@@ -112,7 +112,7 @@ const Settings = () => {
                     </TouchableOpacity>
 
                     {/* Logout Button */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={handleSignOut}>
+                    <TouchableOpacity style={styles.buttonContainer} >
                         <View style={{flexDirection: 'row'}}>
                             <Feather name='log-out' color='#5858FB' size={20} style={{alignSelf: 'center', marginLeft: 15}} />
                             <Text style={styles.logoutButtonText}>Logout</Text>

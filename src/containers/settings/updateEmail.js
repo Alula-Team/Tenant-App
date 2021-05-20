@@ -3,7 +3,7 @@ import { Text, TextInput, View, TouchableOpacity, ScrollView, Alert } from 'reac
 import { Header, Icon } from 'react-native-elements';
 
 // Firebase
-import { updateUserEmail } from '../../firebase/firebase';
+// import { updateUserEmail } from '../../firebase/firebase';
 
 // Style Sheet
 import styles from './sett-styles';
@@ -17,20 +17,20 @@ const UpdateEmail = ({ navigation }) => {
         setEmail('');
     };
 
-    const onSubmit = () => {
-        updateUserEmail(email, password).then(() => {
-            Alert.alert(
-                'Success!',
-                'Your email has been updated.',
-                [{
-                    text: 'Close',
-                    onPress: () => navigation.navigate('EditProfile')
-                }]
-            )
-        });
-        setPassword('');
-        emptyState();
-    }
+    // const onSubmit = () => {
+    //     updateUserEmail(email, password).then(() => {
+    //         Alert.alert(
+    //             'Success!',
+    //             'Your email has been updated.',
+    //             [{
+    //                 text: 'Close',
+    //                 onPress: () => navigation.navigate('EditProfile')
+    //             }]
+    //         )
+    //     });
+    //     setPassword('');
+    //     emptyState();
+    // }
 
     return (
         <>
@@ -105,7 +105,7 @@ const UpdateEmail = ({ navigation }) => {
                     </View>
 
                     {/* Conintue Button */}
-                    <TouchableOpacity style={styles.continueButton} onPress={onSubmit}>
+                    <TouchableOpacity style={styles.continueButton} >
                         <Text style={styles.continueButtonText}>Save</Text>
                     </TouchableOpacity>
                 </ScrollView>

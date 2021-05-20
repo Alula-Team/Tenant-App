@@ -4,20 +4,18 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
-import Dashboard from '../../containers/dashboard/dashboard';
-
+import Notifications from '../../containers/notifications/notification';
 
 const Stack = createStackNavigator();
 
-const PropertiesNavigation = (props) => {
+const DashboardNavigation = (props) => {
     return(
         <>
             <Stack.Navigator>
-                <Stack.Screen name='Dashboard' component={Dashboard} options={{ headerShown: false }} />
-                
+                <Stack.Screen name='Notifications' component={Notifications} options={{ headerShown: false }} />
             </Stack.Navigator>
         </>
     );
 }
 
-export default PropertiesNavigation;
+export default DashboardNavigation;

@@ -6,7 +6,7 @@ import { Header, Icon } from 'react-native-elements';
 // import { useForm, Controller } from "react-hook-form";
 
 // Firebase
-import { updateUserPassword } from '../../firebase/firebase';
+// import { updateUserPassword } from '../../firebase/firebase';
 
 // Style Sheet
 import styles from './sett-styles';
@@ -19,9 +19,9 @@ const UpdateProfile = ({ navigation }) => {
 
     // const { control, handleSubmit } = useForm();
 
-    const emptyState = () => {
-        setNewPassword('');
-    };
+    // const emptyState = () => {
+    //     setNewPassword('');
+    // };
 
     const onSubmit = () => {
         updateUserPassword(password, newPassword)
@@ -123,7 +123,7 @@ const UpdateProfile = ({ navigation }) => {
                     </View> */}
 
                     {/* Save Button */}
-                    <TouchableOpacity style={styles.continueButton} onPress={onSubmit}>
+                    <TouchableOpacity style={styles.continueButton}>
                         <Text style={styles.continueButtonText}>Save</Text>
                     </TouchableOpacity>
                 </ScrollView>

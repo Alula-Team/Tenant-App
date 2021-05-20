@@ -10,7 +10,7 @@ import { useForm, Controller } from "react-hook-form";
 import Feather from 'react-native-vector-icons/Feather';
 
 // Firebase
-import { signIn } from '../../firebase/firebase';
+// import { signIn } from '../../firebase/firebase';
 
 // Style Sheet
 import styles from './auth-styles';
@@ -22,11 +22,11 @@ const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const onSubmit = () => {
-        signIn(email, password);
-        setEmail('');
-        setPassword('');
-    }
+    // const onSubmit = () => {
+    //     signIn(email, password);
+    //     setEmail('');
+    //     setPassword('');
+    // }
 
     return (
         <KeyboardAwareScrollView style={styles.container}>
@@ -113,7 +113,7 @@ const LoginScreen = ({ navigation }) => {
                 {/* Sign In Button */}
                 <TouchableOpacity 
                     style={styles.continueButton}
-                    onPress={onSubmit}
+                    
                 >
                     <Text style={styles.submitText}>Login</Text>
                 </TouchableOpacity>

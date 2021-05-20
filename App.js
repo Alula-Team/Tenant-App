@@ -21,8 +21,8 @@ export default function App() {
     <AppearanceProvider>
       {/* <Provider store={store}> */}
         <NavigationContainer>
-          {/* <MainStack /> */}
-          <AuthStack />
+          <MainStack />
+          {/* <AuthStack /> */}
         </NavigationContainer>
       {/* </Provider> */}
     </AppearanceProvider>

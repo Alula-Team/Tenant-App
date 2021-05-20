@@ -2,13 +2,12 @@ import React, { useState} from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import { Header } from 'react-native-elements';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import firebase from 'firebase';
 
 // Icons
 import Feather from 'react-native-vector-icons/Feather';
 
 // Firebase
-import { registration } from '../../firebase/firebase';
+// import { registration } from '../../firebase/firebase';
 
 // Style Sheet
 import styles from './auth-styles';
@@ -19,11 +18,11 @@ const RegisterScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const emptyState = () => {
-        setUsername('');
-        setEmail('');
-        setPassword('');
-    };
+    // const emptyState = () => {
+    //     setUsername('');
+    //     setEmail('');
+    //     setPassword('');
+    // };
 
     const onSubmit = () => {
         registration( email, password, username );
@@ -57,7 +56,7 @@ const RegisterScreen = ({ navigation }) => {
                         />
                         <TextInput
                             style={styles.email}
-                            placeholder='Company or Landlord Name'
+                            placeholder='First & Last Name'
                             placeholderTextColor='#ffffff50'
                             autoCapitalize='words'
                             autoCompleteType='off'
@@ -128,7 +127,7 @@ const RegisterScreen = ({ navigation }) => {
                 {/* Sign Up Button */}
                 <TouchableOpacity 
                     style={styles.continueButton}
-                    onPress={onSubmit}
+                    // onPress={onSubmit}
                 >
                     <Text style={styles.submitText}>Sign Up</Text>
                 </TouchableOpacity>

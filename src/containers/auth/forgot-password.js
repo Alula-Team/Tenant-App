@@ -20,11 +20,11 @@ const ForgotPasswordScreen = ({ navigation }) => {
 
     const [email, setEmail] = useState('');
 
-    const onSubmit = () => {
-        handlePasswordReset(email);
-        setEmail(email);
-        navigation.navigate('Login');
-    }
+    // const onSubmit = () => {
+    //     handlePasswordReset(email);
+    //     setEmail(email);
+    //     navigation.navigate('Login');
+    // }
 
     return (
         <View style={styles.container}>
@@ -81,7 +81,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
                 </View>
                 
                 {/* Sign In Button */}
-                <TouchableOpacity style={styles.continueButton} onPress={onSubmit}>
+                <TouchableOpacity style={styles.continueButton} >
                     <Text style={styles.submitText}>Submit</Text>
                 </TouchableOpacity>
             </View>

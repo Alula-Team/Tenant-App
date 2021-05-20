@@ -3,7 +3,7 @@ import { Text, TextInput, View, TouchableOpacity, ScrollView, Alert } from 'reac
 import { Header, Icon } from 'react-native-elements';
 
 // Firebase
-import { updateUsername } from '../../firebase/firebase';
+// import { updateUsername } from '../../firebase/firebase';
 
 // Style Sheet
 import styles from './sett-styles';
@@ -15,20 +15,21 @@ const UpdateProfile = ({ navigation }) => {
     const emptyState = () => {
         setUsername('');
     };
-    const onSubmit = () => {
-        updateUsername(username)
-            .then(() => {
-                Alert.alert(
-                    'Success!',
-                    'Your username has been updated.',
-                    [{
-                        text: 'Close',
-                        onPress: () => navigation.navigate('EditProfile')
-                    }]
-                )
-            })
-        emptyState();
-    }
+
+    // const onSubmit = () => {
+    //     updateUsername(username)
+    //         .then(() => {
+    //             Alert.alert(
+    //                 'Success!',
+    //                 'Your username has been updated.',
+    //                 [{
+    //                     text: 'Close',
+    //                     onPress: () => navigation.navigate('EditProfile')
+    //                 }]
+    //             )
+    //         })
+    //     emptyState();
+    // }
 
     return (
         <>
@@ -83,7 +84,7 @@ const UpdateProfile = ({ navigation }) => {
                     </View>
 
                     {/* Conintue Button */}
-                    <TouchableOpacity style={styles.continueButton} onPress={onSubmit}>
+                    <TouchableOpacity style={styles.continueButton}>
                         <Text style={styles.continueButtonText}>Save</Text>
                     </TouchableOpacity>
                 </ScrollView>

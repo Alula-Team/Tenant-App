@@ -54,7 +54,6 @@ const ServiceRequests = () => {
                     backgroundColor: "#09061C",
                     justifyContent: "space-around",
                     borderBottomWidth: 0,
-                    top: 0
                 }}
                 />
                 {/* END Header */}
