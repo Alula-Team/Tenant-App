@@ -45,7 +45,8 @@ const Settings = () => {
                     containerStyle={{
                         backgroundColor: '#09061C',
                         justifyContent: 'space-around',
-                        borderBottomWidth: 0
+                        borderBottomWidth: 0,
+                        position: 'fixed'
                     }}
                 />
 

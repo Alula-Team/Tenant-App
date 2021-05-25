@@ -18,13 +18,15 @@ import { Appearance, AppearanceProvider, useColorScheme } from 'react-native-app
 
 export default function App() {
   return (
-    <AppearanceProvider>
+    <>
+    {/* <AppearanceProvider> */}
       {/* <Provider store={store}> */}
         <NavigationContainer>
           <MainStack />
           {/* <AuthStack /> */}
         </NavigationContainer>
       {/* </Provider> */}
-    </AppearanceProvider>
+    {/* </AppearanceProvider> */}
+    </>
   );
 }

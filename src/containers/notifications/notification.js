@@ -20,7 +20,8 @@ const Dashboard = () => {
         <>
             <View style={styles.container}>
                 {/* Header */}
-                <Header placement={'left'}
+                <Header 
+                    placement={'left'}
                     centerComponent={{ 
                         text: 'Notifications', 
                         style: { 
@@ -33,7 +34,7 @@ const Dashboard = () => {
                     containerStyle={{
                         backgroundColor: '#09061C',
                         justifyContent: 'space-around',
-                        borderBottomWidth: 0
+                        borderBottomWidth: 0,
                     }}
                 />
             </View>

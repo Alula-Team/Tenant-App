@@ -1,4 +1,5 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 
 // Navigation
 import { createStackNavigator } from '@react-navigation/stack';
@@ -12,7 +13,15 @@ import createRequest from '../../containers/serviceRequests/createRequest';
 
 const Stack = createStackNavigator();
 
-const ServiceRequestsNavigation = (props) => {
+const ServiceRequestsNavigation = ({ navigation }) => {
+
+    function Icon () {
+        return (
+        <TouchableOpacity style={{ paddingRight: 30, paddingTop: 30 }} onPress={() => navigation.navigate('AddRequest')}>
+            <Feather name="plus" color='#fff' size={25} />
+        </TouchableOpacity>
+    );
+    }
     return(
         <>
             <Stack.Navigator>
