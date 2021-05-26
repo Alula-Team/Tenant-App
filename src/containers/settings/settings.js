@@ -31,24 +31,10 @@ const Settings = () => {
         <>
             <View style={styles.container}>
                 {/* Header */}
-                <Header 
-                    placement={'left'}
-                    centerComponent={{ 
-                        text: 'Settings', 
-                        style: { 
-                            color: '#fff', 
-                            fontWeight: 'bold', 
-                            fontSize: 25, 
-                            paddingTop: 30
-                        }
-                    }}
-                    containerStyle={{
-                        backgroundColor: '#09061C',
-                        justifyContent: 'space-around',
-                        borderBottomWidth: 0,
-                        position: 'fixed'
-                    }}
-                />
+                <View style={styles.headerContainer}>
+                    <Text style={styles.headerText}>Settings</Text>
+                </View>
+                {/* END Header */}
 
                 <ScrollView style={{marginTop: 20}}>
                     {/* Profile View */}

@@ -17,7 +17,7 @@ const Routes = (props) => {
     return (
         <>
             {/* Authentication Routes */}
-            <authStack.Navigator>
+            <authStack.Navigator style={{ flex: 1, backgroundColor: '#09061C' }}>
                 <authStack.Screen name='Loading' component={Loading} options={{ headerShown: false }} />
                 <authStack.Screen name='Login' component={Login} options={{ headerShown: false }} />
                 <authStack.Screen name='Register' component={Register} options={{ headerShown: false }} /> 

@@ -1,13 +1,8 @@
 import React from 'react';
-import { Text, View, SafeAreaView, FlatList, TouchableOpacity, TextInput } from "react-native";
-import { Header, Icon } from "react-native-elements";
-import RNPickerSelect from 'react-native-picker-select';
+import { Text, View, FlatList, SafeAreaView, TouchableOpacity } from "react-native";
 
 // Forms
 import { useForm, Controller } from "react-hook-form";
-
-// Navigation
-import { useNavigation } from "@react-navigation/native";
 
 // Vector Icons
 import Feather from "react-native-vector-icons/Feather";
@@ -15,9 +10,7 @@ import Feather from "react-native-vector-icons/Feather";
 // Style Sheet
 import styles from './service-styles';
 
-const ServiceRequests = () => {
-
-    const navigation = useNavigation();
+const ServiceRequests = ({ navigation }) => {
 
     // Dummy Data
     const data = [
@@ -80,63 +73,37 @@ const ServiceRequests = () => {
         <>
             <View style={styles.container}>
                 {/* Header */}
-                <Header
-                placement={"left"}
-                centerComponent={{
-                    text: "Service Requests",
-                    style: {
-                    color: "#fff",
-                    fontWeight: "bold",
-                    fontSize: 25,
-                    paddingTop: 30,
-                    },
-                }}
-                rightComponent={
-                    <>
-                    <Icon
-                        name="plus"
-                        type="feather"
-                        color="#fff"
-                        size={25}
-                        iconStyle={{
-                        paddingTop: 30,
-                        paddingRight: 20,
-                        paddingBottom: 10,
-                        }}
-                        onPress={() => navigation.navigate("AddRequest")}
-                    />
-                    </>
-                }
-                containerStyle={{
-                    backgroundColor: "#09061C",
-                    justifyContent: "space-around",
-                    borderBottomWidth: 0,
-                }}
-                />
+                <View style={styles.headerContainer}>
+                    <Text style={styles.headerText}>Service Requests</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('AddRequest')}>
+                        <Feather name='plus' size={25} color='#fff' style={{paddingRight: 30}} />
+                    </TouchableOpacity>
+                </View>
                 {/* END Header */}
 
                 {/* Service Request Flatlist */}
-                <FlatList
-                    data={data}
-                    keyExtractor={(item) => item.id}
-                    renderItem={({ item }) => (
-                        <TouchableOpacity style={styles.listCell}>
-                            <View>
-                                <Text style={styles.listItem}>{item.repair_type}</Text>
-                                <Text style={styles.listSubItem}>Address: {item.address}</Text>
-                                <Text style={styles.listSubItem}>Date: {item.date}</Text>
-                                <Text style={styles.listSubItem}>Status: {item.status}</Text>
-                            </View>
-                            <Feather name='arrow-right' color='#fff' size={20} style={{alignSelf: 'center', marginRight: 10}} />
-                        </TouchableOpacity>
-                    )}
-                    contentContainerStyle={{ paddingBottom: 350 }}
-                    showsVerticalScrollIndicator={false}
-                    ItemSeparatorComponent={renderSeparator}
-                    ListEmptyComponent={EmptyListMessage}
-                />
+                <SafeAreaView>
+                    <FlatList
+                        data={data}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item }) => (
+                            <TouchableOpacity style={styles.listCell} onPress={() => navigation.navigate('RequestDetail')}>
+                                <View>
+                                    <Text style={styles.listItem}>{item.repair_type}</Text>
+                                    <Text style={styles.listSubItem}>Address: {item.address}</Text>
+                                    <Text style={styles.listSubItem}>Date: {item.date}</Text>
+                                    <Text style={styles.listSubItem}>Status: {item.status}</Text>
+                                </View>
+                                <Feather name='arrow-right' color='#fff' size={20} style={{alignSelf: 'center', marginRight: 10}} />
+                            </TouchableOpacity>
+                        )}
+                        contentContainerStyle={{ paddingBottom: 350 }}
+                        showsVerticalScrollIndicator={false}
+                        ItemSeparatorComponent={renderSeparator}
+                        ListEmptyComponent={EmptyListMessage}
+                    />
+                </SafeAreaView>
                 {/* END Service Request Flatlist */}
-
             </View>
         </>
     );

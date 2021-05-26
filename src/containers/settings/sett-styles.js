@@ -7,6 +7,20 @@ const styles = StyleSheet.create({
         height: '100%',
     },
 
+    // Header
+    headerContainer: {
+        marginTop: 80,
+        paddingBottom: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    headerText: {
+        color: '#fff',
+        marginLeft: 20,
+        fontSize: 25,
+        fontWeight: 'bold'
+    },
+
     // Forms
     buttonContainer: {
         marginHorizontal: 5,
