@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Screens
 import ServiceRequests from '../../containers/serviceRequests/serviceRequests';
 import CreateRequest from '../../containers/serviceRequests/createRequest';
-import RequestDetail from '../../containers/serviceRequests/requestDetail';
+import RequestDetail from '../../containers/serviceRequests/serviceRequestDetail';
 
 const Stack = createStackNavigator();
 

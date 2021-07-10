@@ -1,10 +1,8 @@
 import React from "react";
-import View from 'react-native';
 
 import { NavigationContainer } from "@react-navigation/native";
 import MainStack from "./src/routes/MainStack";
 import AuthStack from "./src/routes/AuthStack";
-import { Appearance, AppearanceProvider, useColorScheme } from 'react-native-appearance';
 
 
 // Redux Stuff
@@ -20,14 +18,12 @@ import { Appearance, AppearanceProvider, useColorScheme } from 'react-native-app
 export default function App() {
   return (
     <>
-    {/* <AppearanceProvider> */}
       {/* <Provider store={store}> */}
         <NavigationContainer>
-          <MainStack />
-          {/* <AuthStack /> */}
+          {/* <MainStack /> */}
+          <AuthStack />
         </NavigationContainer>
       {/* </Provider> */}
-    {/* </AppearanceProvider> */}
     </>
   );
 }
