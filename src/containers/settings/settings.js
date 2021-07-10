@@ -64,7 +64,7 @@ const Settings = ({ navigation }) => {
             <Text
               style={{ color: "#ffffff90", fontSize: 14, fontWeight: "600" }}
             >
-              Current User: {user}
+              {/* Current User: {user} */}
             </Text>
             <Text
               style={{
@@ -77,7 +77,7 @@ const Settings = ({ navigation }) => {
               Username
             </Text>
             <Text style={{ color: "#fff", fontSize: 15, marginTop: 10 }}>
-              {auth.currentUser.email}
+              {/* {auth.currentUser.email} */}
             </Text>
           </View>
 

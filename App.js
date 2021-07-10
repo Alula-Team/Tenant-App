@@ -20,8 +20,8 @@ export default function App() {
     <>
       {/* <Provider store={store}> */}
         <NavigationContainer>
-          {/* <MainStack /> */}
-          <AuthStack />
+          <MainStack />
+          {/* <AuthStack /> */}
         </NavigationContainer>
       {/* </Provider> */}
     </>

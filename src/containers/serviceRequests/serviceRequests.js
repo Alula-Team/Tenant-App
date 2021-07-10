@@ -59,15 +59,15 @@ const ServiceRequests = () => {
                         paddingTop: 30
                     }
                 }}
-                leftComponent={
+                rightComponent={
                     <Icon 
-                        name='arrow-left'
+                        name='edit'
                         type='feather'
                         color='#fff'
                         size={25}
                         iconStyle={{
                             paddingTop: 30,
-                            paddingLeft: 10,
+                            paddingRight: 10,
                             paddingBottom: 10
                         }}
                         onPress={() => navigation.goBack()}
