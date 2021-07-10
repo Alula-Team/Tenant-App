@@ -17,8 +17,22 @@ const Stack = createStackNavigator();
 const PropertiesNavigation = (props) => {
     return(
         <>
-            <Stack.Navigator>
-                <Stack.Screen name='Settings' component={Settings} options={{ headerShown: false }} />
+            <Stack.Navigator
+                screenOptions={{
+                    headerStyle: {
+                        backgroundColor: '#232256',
+                        height: 130,
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        color: "#fff",
+                        fontWeight: "700",
+                        fontSize: 25
+                    },
+                    headerTitleAlign: 'left'
+                }}
+            >
+                <Stack.Screen name='Settings' component={Settings} options={{ headerTitle: 'Settings' }} />
                 <Stack.Screen name='EditProfile' component={EditProfile} options={{ headerShown: false }} />
                 <Stack.Screen name='UpdateUsername' component={UpdateUsername}  options={{ headerShown: false }} />
                 <Stack.Screen name='UpdateEmail' component={UpdateEmail}  options={{ headerShown: false }} />

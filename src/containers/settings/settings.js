@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Text, View, TouchableOpacity, ScrollView } from "react-native";
 import { Header } from "react-native-elements";
-// import { UserContext } from "../../providers/UserProvider";
+
 // Firebase
 // import { firestore, loggingOut } from "../../firebase/firebase";
 // import firebase from "firebase/app";
@@ -17,7 +17,7 @@ import styles from "./sett-styles";
 // const auth = firebase.auth();
 
 const Settings = ({ navigation }) => {
-  // const user = useContext(UserContext);
+
   // Sign Out
   async function handleSignOut() {
     try {
@@ -30,56 +30,7 @@ const Settings = ({ navigation }) => {
   return (
     <>
       <View style={styles.container}>
-        {/* Header */}
-        <Header
-          placement={"left"}
-          centerComponent={{
-            text: "Settings",
-            style: {
-              color: "#fff",
-              fontWeight: "bold",
-              fontSize: 25,
-              paddingTop: 30,
-              paddingBottom: 7
-            },
-          }}
-          containerStyle={{
-            backgroundColor: "#232256",
-            justifyContent: "space-around",
-            borderBottomWidth: 0,
-          }}
-        />
-
         <ScrollView style={{ marginTop: 20 }}>
-          {/* Profile View */}
-          <View
-            style={{
-              backgroundColor: "#5858FB",
-              marginHorizontal: 20,
-              padding: 20,
-              marginBottom: 20,
-              borderRadius: 20,
-            }}
-          >
-            <Text
-              style={{ color: "#ffffff90", fontSize: 14, fontWeight: "600" }}
-            >
-              {/* Current User: {user} */}
-            </Text>
-            <Text
-              style={{
-                color: "#fff",
-                fontSize: 20,
-                fontWeight: "600",
-                marginTop: 10,
-              }}
-            >
-              Username
-            </Text>
-            <Text style={{ color: "#fff", fontSize: 15, marginTop: 10 }}>
-              {/* {auth.currentUser.email} */}
-            </Text>
-          </View>
 
           {/* Edit Profile Button */}
           <TouchableOpacity

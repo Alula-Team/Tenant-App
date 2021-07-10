@@ -27,33 +27,6 @@ const ServiceRequestDetailScreen = () => {
     return (
         <>
             <View style={styles.container}>
-                {/* Header */}
-                <Header 
-                    placement={"right"}
-                    centerComponent={
-                        <TouchableOpacity style={{ paddingTop: 32.5, borderBottomWidth: 1, borderBottomColor: '#fff', borderStyle: 'solid' }}>
-                            <Text style={{ color: "#fff", fontSize: 16, fontWeight: "600", paddingBottom: 2}}>Mark Complete</Text>
-                        </TouchableOpacity>}
-                    leftComponent={
-                        <Icon 
-                            name='arrow-left'
-                            type='feather'
-                            color='#fff'
-                            size={25}
-                            iconStyle={{
-                                paddingTop: 30,
-                                paddingLeft: 10,
-                                paddingBottom: 10
-                            }}
-                            onPress={() => navigation.goBack()}
-                        />
-                    }
-                    containerStyle={{
-                        backgroundColor: '#232256',
-                        justifyContent: 'space-around',
-                        borderBottomWidth: 0
-                    }}
-                />
                 
                 {/* Content */}
 

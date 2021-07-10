@@ -48,24 +48,6 @@ const Dashboard = () => {
     return(
         <>
             <View style={styles.container}>
-                {/* Header */}
-                <Header placement={'left'}
-                    centerComponent={{ 
-                        text: 'Notifications', 
-                        style: { 
-                            color: '#fff', 
-                            fontWeight: 'bold', 
-                            fontSize: 25, 
-                            paddingTop: 30,
-                            paddingBottom: 7
-                        }
-                    }}
-                    containerStyle={{
-                        backgroundColor: '#232256',
-                        justifyContent: 'space-around',
-                        borderBottomWidth: 0
-                    }}
-                />
 
                 {/* ***** Flatlist Layout ***** */}
                 <TouchableOpacity style={styles.notificationContainer}>

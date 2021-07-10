@@ -23,7 +23,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const RootNavigation = (props) => {
     return (
-        <Tab.Navigator activeColor='white' barStyle={{backgroundColor: '#09061C'}}>
+        <Tab.Navigator activeColor='#655CA0' inactiveColor='#9E9CD390' barStyle={{backgroundColor: '#fff'}}>
             <Tab.Screen 
                 name={'Dashboard'}
                 component={Dashboard}
@@ -36,8 +36,6 @@ const RootNavigation = (props) => {
                         />
                     )
                 }}
-                style={{flex: 1, backgroundColor: '#09061C'}}
-                
             />
             <Tab.Screen 
                 name={'Service Requests'}
@@ -51,7 +49,6 @@ const RootNavigation = (props) => {
                         />
                     )
                 }}
-                style={{flex: 1, backgroundColor: '#09061C'}}
             />
             <Tab.Screen 
                 name={'Notifications'}
@@ -65,7 +62,6 @@ const RootNavigation = (props) => {
                         />
                     )
                 }}
-                style={{flex: 1, backgroundColor: '#09061C'}}
             />
             <Tab.Screen 
                 name={'Settings'}
@@ -79,7 +75,6 @@ const RootNavigation = (props) => {
                         />
                     )
                 }}
-                style={{flex: 1, backgroundColor: '#09061C'}}
             />
         </Tab.Navigator>
     );

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
+import { Text, View, SafeAreaView, FlatList, TouchableOpacity, StatusBar } from 'react-native';
 import { Header, Icon } from 'react-native-elements';
 
 // Navigation
@@ -47,75 +47,45 @@ const ServiceRequests = () => {
   };
 
     return (
-        <View style={styles.container}>
-            {/* Header */}
-            <Header 
-                centerComponent={{ 
-                    text: 'Service Requests', 
-                    style: { 
-                        color: '#fff', 
-                        fontWeight: 'bold', 
-                        fontSize: 22, 
-                        paddingTop: 30
-                    }
-                }}
-                rightComponent={
-                    <Icon 
-                        name='edit'
-                        type='feather'
-                        color='#fff'
-                        size={25}
-                        iconStyle={{
-                            paddingTop: 30,
-                            paddingRight: 10,
-                            paddingBottom: 10
-                        }}
-                        onPress={() => navigation.goBack()}
-                    />
-                }
-                containerStyle={{
-                    backgroundColor: '#232256',
-                    justifyContent: 'space-around',
-                    borderBottomWidth: 0
-                }}
-            />
-
-            {/* Service Request Flat List */}
-            <SafeAreaView>
-                <View style={styles.listView}>
-                    <FlatList
-                        data={data}
-                        keyExtractor={item => item.address}
-                        renderItem={({ item }) => (
-                            <TouchableOpacity style={styles.notificationContainer} onPress={() => navigation.navigate('ServiceRequestDetail')}>
-                                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                                    <View>
-                                        <Text style={styles.notificationTitle}>{item.title}</Text>
-                                        <View style={{ flexDirection: "row", marginTop: 10 }}>
-                                            <Feather name="map-pin" color="#34383D80" size={15} />
-                                            <Text style={styles.notificationText}>{item.address} {item.unit}</Text>
+        <>
+            <View style={styles.container}>
+                {/* Service Request Flat List */}
+                <SafeAreaView>
+                    <View style={styles.listView}>
+                        <FlatList
+                            data={data}
+                            keyExtractor={item => item.address}
+                            renderItem={({ item }) => (
+                                <TouchableOpacity style={styles.notificationContainer} onPress={() => navigation.navigate('RequestDetail')}>
+                                    <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                                        <View>
+                                            <Text style={styles.notificationTitle}>{item.title}</Text>
+                                            <View style={{ flexDirection: "row", marginTop: 10 }}>
+                                                <Feather name="map-pin" color="#34383D80" size={15} />
+                                                <Text style={styles.notificationText}>{item.address} {item.unit}</Text>
+                                            </View>
+                                            <View style={{ flexDirection: "row", marginTop: 10 }}>
+                                                <Feather name="clock" color="#34383D80" size={15} />
+                                                <Text style={styles.notificationText}>{item.date}</Text>
+                                            </View>
+                                            <View style={{ flexDirection: "row", marginTop: 10 }}>
+                                                <Feather name="tool" color="#34383D80" size={15} />
+                                                <Text style={styles.statusText}>{item.status}</Text>
+                                            </View>
                                         </View>
-                                        <View style={{ flexDirection: "row", marginTop: 10 }}>
-                                            <Feather name="clock" color="#34383D80" size={15} />
-                                            <Text style={styles.notificationText}>{item.date}</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "row", marginTop: 10 }}>
-                                            <Feather name="tool" color="#34383D80" size={15} />
-                                            <Text style={styles.statusText}>{item.status}</Text>
-                                        </View>
+                                        <Feather name="arrow-right" color="#34383D90" size={20} style={styles.arrow} />
                                     </View>
-                                    <Feather name="arrow-right" color="#34383D90" size={20} style={styles.arrow} />
-                                </View>
 
-                            </TouchableOpacity>
-                        )}
-                        contentContainerStyle={{ paddingBottom: 350 }}
-                        showsVerticalScrollIndicator={false}
-                        ItemSeparatorComponent={renderSeparator}
-                    />
-                </View>
-            </SafeAreaView>
-        </View>
+                                </TouchableOpacity>
+                            )}
+                            contentContainerStyle={{ paddingBottom: 350 }}
+                            showsVerticalScrollIndicator={false}
+                            ItemSeparatorComponent={renderSeparator}
+                        />
+                    </View>
+                </SafeAreaView>
+            </View>
+        </>
     );
 }
 
