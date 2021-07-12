@@ -43,7 +43,28 @@ const ServiceRequestsNavigation = ({ navigation }) => {
                         ), 
                     }} 
                 />
-                <Stack.Screen name='AddRequest' component={CreateRequest} options={{ headerShown: false }} />
+                <Stack.Screen 
+                    name='AddRequest' 
+                    component={CreateRequest} 
+                    options={{ 
+                        headerTitleStyle: {
+                            color: "#fff",
+                            fontWeight: "700",
+                            fontSize: 20
+                        },
+                        headerTitle: 'Create Request',
+                        headerLeft: () => (
+                            <TouchableOpacity onPress={() => navigation.navigate('ServiceRequests')}>
+                                <Feather name='arrow-left' color='#fff' size={25} style={{paddingLeft: 20}} />
+                            </TouchableOpacity>
+                        ), 
+                        headerRight: () => (
+                            <TouchableOpacity>
+                                <Feather name='send' color='#fff' size={25} style={{paddingRight: 20}} />
+                            </TouchableOpacity>
+                        ), 
+                    }}
+                />
                 <Stack.Screen 
                     name='RequestDetail' 
                     component={RequestDetail}

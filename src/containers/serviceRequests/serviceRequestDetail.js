@@ -31,9 +31,6 @@ const ServiceRequestDetailScreen = () => {
                 {/* Content */}
 
                 <ScrollView>
-                    {/* Image */}
-                    
-                    
                     {/* Property Address */}
                     <View style={styles.propertySectionSpacing}>
                         <Text style={styles.notificationTitle}>Property Address</Text>
@@ -41,24 +38,23 @@ const ServiceRequestDetailScreen = () => {
                             <Feather name='map-pin' color='white' size={15} style={{marginTop: 1, color: '#34383D80'}} />
                             <Text style={styles.notificationText}>City, State, Zip</Text>
                         </View>
-                        <View style={{ flexDirection: "row", marginTop: 15 }}>
+                        <View style={{ flexDirection: "row", marginTop: 10 }}>
+                            <Feather name="clock" color="#34383D80" size={15} />
+                            <Text style={styles.statusText}>Date Created</Text>
+                        </View>
+                        <View style={{ flexDirection: "row", marginTop: 10 }}>
                             <Feather name="tool" color="#34383D80" size={15} />
                             <Text style={styles.statusText}>Status</Text>
                         </View>
                     </View>
 
-                    {/* Service Title */}
-                    <View style={styles.propertySectionSpacing}>
-                        <Text style={styles.notificationTitle}>Service Request Title</Text>
-                    </View>
-
                     {/* Description */}
-                    <View style={styles.descriptionSectionSpacing}>
-                        <Text style={{color: '#34383D80', fontSize: 15, fontWeight: '600', marginTop: 30, marginBottom: 20, marginLeft: 20}}>Description:</Text>
+                    <View style={styles.propertySectionSpacing}>
+                        <Text style={{color: '#34383D80', fontSize: 15, fontWeight: '600', marginTop: 30, marginBottom: 20}}>Description:</Text>
                         <Text style={styles.descriptionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
                     </View> 
 
-                    {/* Buttons */}
+                    {/* Image View */}
                     
 
                 </ScrollView>

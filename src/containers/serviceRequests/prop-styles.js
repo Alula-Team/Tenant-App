@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
 
   // ** SERVICE REQUEST Screen ** //
   propertySectionSpacing: {
-    marginTop: 30,
+    marginTop: 20,
     marginLeft: 20,
   },
   notificationContainer: {
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   descriptionText: {
-    paddingHorizontal: 20,
+    paddingRight: 20,
     fontSize: 14,
     fontWeight: '500',
     color: '#34383D',
