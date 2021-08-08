@@ -30,6 +30,25 @@ const Settings = ({ navigation }) => {
   return (
     <>
       <View style={styles.container}>
+        {/* Header */}
+        <Header
+          placement={"left"}
+          centerComponent={{
+            text: "Settings",
+            style: {
+              color: "#fff",
+              fontWeight: "700",
+              fontSize: 25,
+              paddingTop: 20,
+              paddingBottom: 7,
+            },
+          }}
+          containerStyle={{
+            backgroundColor: "#232256",
+            justifyContent: "space-around",
+            borderBottomWidth: 0,
+          }}
+        />
         <ScrollView style={{ marginTop: 20 }}>
 
           {/* Edit Profile Button */}

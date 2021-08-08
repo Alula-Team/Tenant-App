@@ -24,24 +24,19 @@ const About = () => {
                         text: "About",
                         style: {
                             color: "#fff",
-                            fontWeight: "bold",
-                            fontSize: 22,
-                            paddingTop: 30,
+                            fontWeight: '700', 
+                            fontSize: 20, 
+                            paddingTop: 20,
                         },
                     }}
                     leftComponent={
-                        <Icon
-                            name="arrow-left"
-                            type="feather"
-                            color="#fff"
-                            size={25}
-                            iconStyle={{
-                            paddingTop: 30,
-                            paddingLeft: 10,
-                            paddingBottom: 10,
-                            }}
-                            onPress={() => navigation.goBack()}
-                        />
+                        <TouchableOpacity
+                            keyboardShouldPersistTaps={true}
+                            style={{ paddingTop: 20, paddingLeft: 10, paddingBottom: 10 }}
+                          onPress={() => navigation.goBack()}
+                        >
+                            <Feather name='arrow-left' color='#fff' size={25} />
+                        </TouchableOpacity>
                     }
                     containerStyle={{
                         backgroundColor: "#232256",
@@ -57,7 +52,7 @@ const About = () => {
                 </View>
 
                 {/* Privacy Policy */}
-                <TouchableOpacity style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('PrivacyPolicy')}>
                     <View style={{flexDirection: 'row'}}>
                         <Feather name='lock' color='#34383D80' size={20} style={{alignSelf: 'center', marginLeft: 15}} />
                         <Text style={styles.buttonText}>Privacy Policy</Text>
@@ -66,7 +61,7 @@ const About = () => {
                 </TouchableOpacity>
 
                 {/* Privacy Policy */}
-                <TouchableOpacity style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Terms')}>
                     <View style={{flexDirection: 'row'}}>
                         <Feather name='archive' color='#34383D80' size={20} style={{alignSelf: 'center', marginLeft: 15}} />
                         <Text style={styles.buttonText}>Terms & Conditions</Text>

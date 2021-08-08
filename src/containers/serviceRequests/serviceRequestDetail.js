@@ -2,21 +2,16 @@ import React from 'react'
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { Header, Icon } from 'react-native-elements';
 
-// Navigation
-import { useNavigation } from '@react-navigation/native';
-
 // Vector Icons
 import Feather from 'react-native-vector-icons/Feather';
 
 // Style Sheet
-import styles from './prop-styles';
+import styles from './styles';
 
 // Things I need
     //Function to swap buttons when marked complete or unmarked complete
 
-const ServiceRequestDetailScreen = () => {
-
-    const navigation = useNavigation();
+const ServiceRequestDetailScreen = ({ navigation }) => {
 
     // Button Function
 
@@ -27,7 +22,32 @@ const ServiceRequestDetailScreen = () => {
     return (
         <>
             <View style={styles.container}>
-                
+                {/* Header */}
+                <Header
+                    centerComponent={{ 
+                        text: 'Request Detail', 
+                        style: { 
+                            color: '#fff', 
+                            fontWeight: '700', 
+                            fontSize: 20, 
+                            paddingTop: 20
+                        }
+                    }}
+                    leftComponent={
+                        <TouchableOpacity
+                            keyboardShouldPersistTaps={true}
+                            style={{ paddingTop: 20, paddingLeft: 10, paddingBottom: 10 }}
+                          onPress={() => navigation.goBack()}
+                        >
+                            <Feather name='arrow-left' color='#fff' size={25} />
+                        </TouchableOpacity>
+                    }
+                    containerStyle={{
+                        backgroundColor: "#232256",
+                        justifyContent: "space-around",
+                        borderBottomWidth: 0,
+                    }}
+                />
                 {/* Content */}
                 <ScrollView>
                     {/* Property Address */}

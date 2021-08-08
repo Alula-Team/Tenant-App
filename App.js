@@ -1,4 +1,5 @@
 import React from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { NavigationContainer } from "@react-navigation/native";
 import MainStack from "./src/routes/MainStack";
@@ -18,12 +19,14 @@ import AuthStack from "./src/routes/AuthStack";
 export default function App() {
   return (
     <>
-      {/* <Provider store={store}> */}
-        <NavigationContainer>
-          <MainStack />
-          {/* <AuthStack /> */}
-        </NavigationContainer>
-      {/* </Provider> */}
+      <SafeAreaProvider>
+        {/* <Provider store={store}> */}
+          <NavigationContainer>
+            <MainStack />
+            {/* <AuthStack /> */}
+          </NavigationContainer>
+        {/* </Provider> */}
+      </SafeAreaProvider>
     </>
   );
 }

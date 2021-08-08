@@ -25,27 +25,22 @@ const UpdatePayment = () => {
                 {/* Header */}
                 <Header
                     centerComponent={{
-                            text: "Update Payment",
-                            style: {
-                            color: "#fff",
-                            fontWeight: "bold",
-                            fontSize: 22,
-                            paddingTop: 30,
-                            },
+                        text: "Update Payment",
+                        style: {
+                        color: "#fff",
+                        fontWeight: '700', 
+                        fontSize: 20,
+                        paddingTop: 20,
+                        },
                     }}
                     leftComponent={
-                        <Icon
-                        name="arrow-left"
-                        type="feather"
-                        color="#fff"
-                        size={25}
-                        iconStyle={{
-                            paddingTop: 30,
-                            paddingLeft: 10,
-                            paddingBottom: 10,
-                        }}
-                        onPress={() => navigation.goBack()}
-                        />
+                        <TouchableOpacity
+                            keyboardShouldPersistTaps={true}
+                            style={{ paddingTop: 20, paddingLeft: 10, paddingBottom: 10 }}
+                            onPress={() => navigation.goBack()}
+                        >
+                            <Feather name='arrow-left' color='#fff' size={25} />
+                        </TouchableOpacity>
                     }
                     containerStyle={{
                         backgroundColor: "#232256",

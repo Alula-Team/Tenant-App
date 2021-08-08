@@ -2,22 +2,17 @@ import React from 'react'
 import { Text, View, SafeAreaView, FlatList, TouchableOpacity, StatusBar } from 'react-native';
 import { Header, Icon } from 'react-native-elements';
 
-// Navigation
-import { useNavigation } from '@react-navigation/native';
-
 // Vector Icons
 import Feather from 'react-native-vector-icons/Feather';
 
 // Style Sheet
-import styles from './prop-styles';
+import styles from './styles';
 
 // Things I need
     // 
 
 
-const ServiceRequests = () => {
-
-    const navigation = useNavigation();
+const ServiceRequests = ({ navigation }) => {
 
     // Flatlist Dummy Data
     const data = [
@@ -49,6 +44,33 @@ const ServiceRequests = () => {
     return (
         <>
             <View style={styles.container}>
+                {/* Header */}
+                <Header 
+                    placement={"left"}
+                    centerComponent={{
+                      text: "Service Requests",
+                      style: {
+                        color: "#fff",
+                        fontWeight: "700",
+                        fontSize: 25,
+                        paddingTop: 20,
+                      },
+                    }}
+                    rightComponent={
+                        <TouchableOpacity
+                            keyboardShouldPersistTaps={true}
+                            style={{ paddingTop: 20, paddingRight: 10, paddingBottom: 10 }}
+                            onPress={() => navigation.navigate('AddRequest')}
+                        >
+                            <Feather name='plus' color='#fff' size={25} />
+                        </TouchableOpacity>
+                    }
+                    containerStyle={{
+                        backgroundColor: '#232256',
+                        justifyContent: 'space-around',
+                        borderBottomWidth: 0
+                    }}
+                />
                 {/* Service Request Flat List */}
                 <SafeAreaView>
                     <View style={styles.listView}>

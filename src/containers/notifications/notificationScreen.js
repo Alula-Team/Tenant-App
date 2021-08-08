@@ -48,28 +48,46 @@ const Dashboard = () => {
     return(
         <>
             <View style={styles.container}>
+              {/* Header */}
+              <Header
+                placement={"left"}
+                centerComponent={{
+                  text: "Notifications",
+                  style: {
+                    color: "#fff",
+                    fontWeight: "700",
+                    fontSize: 25,
+                    paddingTop: 20,
+                    paddingBottom: 7,
+                  },
+                }}
+                containerStyle={{
+                  backgroundColor: "#232256",
+                  justifyContent: "space-around",
+                  borderBottomWidth: 0,
+                }}
+              />
+              {/* ***** Flatlist Layout ***** */}
+              <TouchableOpacity style={styles.notificationContainer}>
+                  <Text style={styles.notificationTitle}>Notification Title</Text>
+                  
+                  <View style={{ flexDirection: "row", marginTop: 10 }}>
+                    <Feather name="map-pin" color="#34383D80" size={15} />
+                    <Text style={styles.notificationText}>Address</Text>
+                  </View>
+                  
+                  <View style={{ flexDirection: "row", marginTop: 10 }}>
+                    <Feather name="clock" color="#34383D80" size={15} />
+                    <Text style={styles.notificationText}>Date</Text>
+                  </View>
+              </TouchableOpacity>
 
-                {/* ***** Flatlist Layout ***** */}
-                <TouchableOpacity style={styles.notificationContainer}>
-                    <Text style={styles.notificationTitle}>Notification Title</Text>
-                    
-                    <View style={{ flexDirection: "row", marginTop: 10 }}>
-                      <Feather name="map-pin" color="#34383D80" size={15} />
-                      <Text style={styles.notificationText}>Address</Text>
-                    </View>
-                    
-                    <View style={{ flexDirection: "row", marginTop: 10 }}>
-                      <Feather name="clock" color="#34383D80" size={15} />
-                      <Text style={styles.notificationText}>Date</Text>
-                    </View>
-                </TouchableOpacity>
-
-                {/* Flatlist */}
-                <SafeAreaView>
-                    <FlatList 
-                        // SAME STYLING AS TRANSACTIONS FLATLIST
-                    />
-                </SafeAreaView>
+              {/* Flatlist */}
+              <SafeAreaView>
+                  <FlatList 
+                      // SAME STYLING AS TRANSACTIONS FLATLIST
+                  />
+              </SafeAreaView>
             
             </View>
         </>

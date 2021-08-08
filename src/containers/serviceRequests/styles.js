@@ -6,38 +6,27 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff80",
     height: "100%",
   },
-
-  // Searchbar
-  searchContainer: {
+  inputLabel: {
+    marginLeft: 22.5, 
+    marginTop: 20, 
+    fontSize: 16, 
+    fontWeight: '500'
+  },
+  inputContainer: {
     marginHorizontal: 20,
     marginTop: 10,
-    marginBottom: 20,
     borderRadius: 10,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
     height: 45,
     flexDirection: "row",
-    backgroundColor: "#fff",
+    backgroundColor: "#00000012",
   },
-  searchIcon: {
-    alignSelf: "center",
-    marginLeft: 10,
+  inputField: {
+      paddingLeft: 12.5,
+      color: "#34383D",
+      fontSize: 16,
+      fontWeight: "500",
+      width: "100%",
   },
-  searchInput: {
-    color: "#34383D",
-    fontSize: 16,
-    fontWeight: "500",
-    marginHorizontal: 12.5,
-    width: "85%",
-  },
-
-  // Flatlist
   listCell: {
     paddingVertical: 20,
     paddingHorizontal: 25,
@@ -68,8 +57,6 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     alignSelf: "center",
   },
-
-  // ** ADD PROPERTY SCREEN ** //
   sectionText: {
     fontSize: 16,
     fontWeight: "600",
@@ -134,8 +121,6 @@ const styles = StyleSheet.create({
     borderColor: "#34383D",
     backgroundColor: "transparent",
   },
-
-  // ** SERVICE REQUEST Screen ** //
   propertySectionSpacing: {
     marginTop: 20,
     marginLeft: 20,
@@ -173,8 +158,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#34383D',
   },
-
-  // ** PROPERTY DETAIL SCREEN ** //
   propInfo: {
     backgroundColor: "#fff",
     marginHorizontal: 20,
