@@ -40,17 +40,9 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         marginTop: 10,
         borderRadius: 10,
-        shadowColor: "#000",
-        shadowOffset: {
-        width: 0,
-        height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
         height: 45,
         flexDirection: "row",
-        backgroundColor: "#fff",
+        backgroundColor: "#00000012",
     },
     inputField: {
         color: "#34383D",
@@ -98,7 +90,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         marginBottom: 20,
         textAlign: 'center',
-        color: '#34383D'
+        color: 'white'
     },
     terms: {
         textDecorationLine: 'underline',
@@ -106,7 +98,7 @@ const styles = StyleSheet.create({
     },
     otherAuthButton: {
         alignItems: 'center',
-        marginVertical: 20
+        marginTop: 20
     },
     otherAuthText: {
         fontSize: 16,

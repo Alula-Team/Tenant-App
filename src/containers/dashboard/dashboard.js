@@ -79,7 +79,7 @@ const Dashboard = () => {
             </View>
             
             {/* Transactions */}
-            <SafeAreaView style={styles.sectionSpacing}>
+            <View style={styles.sectionSpacing}>
                 <Text style={styles.flatlistTitle}>Transaction History</Text>
                 <FlatList
                     data={data}
@@ -102,7 +102,7 @@ const Dashboard = () => {
                     showsVerticalScrollIndicator={false}
                     ItemSeparatorComponent={renderSeparator}
                 />
-            </SafeAreaView>
+            </View>
         </View>
     )
 }

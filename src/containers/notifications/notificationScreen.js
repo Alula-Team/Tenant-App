@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, SafeAreaView, FlatList, TouchableOpacity, Image } from 'react-native';
+import { Text, View, SafeAreaView, FlatList } from 'react-native';
 import { Badge, Header } from 'react-native-elements';
 
 // Vector Icons
@@ -68,7 +68,7 @@ const Dashboard = () => {
                 }}
               />
               {/* ***** Flatlist Layout ***** */}
-              <TouchableOpacity style={styles.notificationContainer}>
+              <View style={styles.notificationContainer}>
                   <Text style={styles.notificationTitle}>Notification Title</Text>
                   
                   <View style={{ flexDirection: "row", marginTop: 10 }}>
@@ -80,7 +80,7 @@ const Dashboard = () => {
                     <Feather name="clock" color="#34383D80" size={15} />
                     <Text style={styles.notificationText}>Date</Text>
                   </View>
-              </TouchableOpacity>
+              </View>
 
               {/* Flatlist */}
               <SafeAreaView>

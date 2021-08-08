@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import { Header } from 'react-native-elements';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -21,11 +21,13 @@ const LoginScreen = ({ navigation }) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [indicator, setIndicator] = useState(false);
 
     // const onSubmit = () => {
     //     signIn(email, password);
     //     setEmail('');
     //     setPassword('');
+    //     setIndicator(!indicator);
     // }
 
     return (
@@ -97,6 +99,7 @@ const LoginScreen = ({ navigation }) => {
                     {/* <View style={styles.errorMsg}>
                         {errors.password && <Text style={styles.errorText}>Please enter a valid password.</Text>}
                     </View> */}
+                    <ActivityIndicator size="large" color="#232256" animating={indicator} hideActivityIndicator='true' />
                 </View>
                     
 

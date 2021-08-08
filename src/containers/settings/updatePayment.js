@@ -55,23 +55,23 @@ const UpdatePayment = () => {
                     <Image source={require('../../assets/rentCollection.png')} style={styles.img} />
                     {/* Explainer */}
                     <View>
-                        <Text style={styles.title}>Why Collect Payments with Alula</Text>
+                        <Text style={styles.title}>Automate Rent Payments with Alula</Text>
                         <View style={styles.listView}>
+                            <View style={styles.listInline}>
+                                <Feather name='check' size={25} color='#428bca' style={{marginRight: 10}} />
+                                <Text style={styles.listText}>Set Up Auto Pay</Text>
+                            </View>
                             <View style={styles.listInline}>
                                 <Feather name='check' size={25} color='#428bca' style={{marginRight: 10}} />
                                 <Text style={styles.listText}>Automated Record Keeping</Text>
                             </View>
                             <View style={styles.listInline}>
                                 <Feather name='check' size={25} color='#428bca' style={{marginRight: 10}} />
-                                <Text style={styles.listText}>Unlimited Properties, Tenants & Transactions</Text>
+                                <Text style={styles.listText}>Store or Update Payment Information</Text>
                             </View>
                             <View style={styles.listInline}>
                                 <Feather name='check' size={25} color='#428bca' style={{marginRight: 10}} />
                                 <Text style={styles.listText}>Secure Payments via Dwolla</Text>
-                            </View>
-                            <View style={styles.listInline}>
-                                <Feather name='check' size={25} color='#428bca' style={{marginRight: 10}} />
-                                <Text style={styles.listText}>No Monthly Subscription*</Text>
                             </View>
                             <Text style={{color: '#34383D80', marginTop: 20, textAlign: 'center'}}>* 1% transaction fee on rent payments</Text>
                         </View>
