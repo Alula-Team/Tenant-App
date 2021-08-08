@@ -29,7 +29,6 @@ const ServiceRequestDetailScreen = () => {
             <View style={styles.container}>
                 
                 {/* Content */}
-
                 <ScrollView>
                     {/* Property Address */}
                     <View style={styles.propertySectionSpacing}>
