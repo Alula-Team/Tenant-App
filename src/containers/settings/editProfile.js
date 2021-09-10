@@ -9,7 +9,7 @@ import { Header, Icon } from 'react-native-elements';
 import Feather from 'react-native-vector-icons/Feather';
 
 // Style Sheet
-import styles from './sett-styles';
+import styles from './styles';
 
 const EditProfile = ({ navigation }) => {
     
@@ -21,23 +21,28 @@ const EditProfile = ({ navigation }) => {
                     centerComponent={{
                         text: "Edit Profile",
                         style: {
-                        color: "#fff",
+                        color: "#34383D",
                         fontWeight: '700', 
                         fontSize: 20, 
                         paddingTop: 20,
                         },
                     }}
                     leftComponent={
-                        <TouchableOpacity
-                            keyboardShouldPersistTaps={true}
-                            style={{ paddingTop: 20, paddingLeft: 10, paddingBottom: 10 }}
-                          onPress={() => navigation.goBack()}
-                        >
-                            <Feather name='arrow-left' color='#fff' size={25} />
-                        </TouchableOpacity>
+                        <Icon
+                        name="arrow-left"
+                        type="feather"
+                        color="#34383D80"
+                        size={25}
+                        iconStyle={{
+                            paddingTop: 20,
+                            paddingLeft: 10,
+                            paddingBottom: 10,
+                        }}
+                        onPress={() => navigation.goBack()}
+                        />
                     }
                     containerStyle={{
-                        backgroundColor: "#232256",
+                        backgroundColor: "#fff",
                         justifyContent: "space-around",
                         borderBottomWidth: 0,
                     }}

@@ -13,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import Feather from "react-native-vector-icons/Feather";
 
 // Style Sheet
-import styles from "./sett-styles";
+import styles from "./styles";
 // const auth = firebase.auth();
 
 const Settings = ({ navigation }) => {
@@ -36,7 +36,7 @@ const Settings = ({ navigation }) => {
           centerComponent={{
             text: "Settings",
             style: {
-              color: "#fff",
+              color: "#34383D",
               fontWeight: "700",
               fontSize: 25,
               paddingTop: 20,
@@ -44,13 +44,13 @@ const Settings = ({ navigation }) => {
             },
           }}
           containerStyle={{
-            backgroundColor: "#232256",
+            backgroundColor: "#fff",
             justifyContent: "space-around",
             borderBottomWidth: 0,
           }}
         />
-        <ScrollView style={{ marginTop: 20 }}>
 
+        <ScrollView style={{ marginTop: 20 }}>
           {/* Edit Profile Button */}
           <TouchableOpacity
             style={styles.buttonContainer}

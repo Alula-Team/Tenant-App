@@ -9,7 +9,7 @@ import { Header, Icon } from 'react-native-elements';
 import Feather from 'react-native-vector-icons/Feather';
 
 // Style Sheet
-import styles from './sett-styles';
+import styles from './styles';
 
 const UpdateEmail = ({ navigation }) => {
 
@@ -43,23 +43,38 @@ const UpdateEmail = ({ navigation }) => {
                     centerComponent={{
                         text: "Update Email",
                         style: {
-                        color: "#fff",
-                        fontWeight: '700', 
+                        color: "#34383D",
+                        fontWeight: '600', 
                         fontSize: 20,
                         paddingTop: 20,
                         },
                     }}
                     leftComponent={
+                        <Icon
+                        name="arrow-left"
+                        type="feather"
+                        color="#34383D80"
+                        size={25}
+                        iconStyle={{
+                            paddingTop: 20,
+                            paddingLeft: 10,
+                            paddingBottom: 10,
+                        }}
+                        onPress={() => navigation.goBack()}
+                        />
+                    }
+                    rightComponent={
                         <TouchableOpacity
-                            keyboardShouldPersistTaps={true}
-                            style={{ paddingTop: 20, paddingLeft: 10, paddingBottom: 10 }}
-                          onPress={() => navigation.goBack()}
+                          style={{ paddingTop: 22.5, paddingRight: 10 }}
+                          onPress={onSubmit}
                         >
-                            <Feather name='arrow-left' color='#fff' size={25} />
+                          <Text style={{ color: "#955C28", fontSize: 18, fontWeight: "600" }}>
+                            Save
+                          </Text>
                         </TouchableOpacity>
                     }
                     containerStyle={{
-                        backgroundColor: "#232256",
+                        backgroundColor: "#fff",
                         justifyContent: "space-around",
                         borderBottomWidth: 0,
                     }}
@@ -69,15 +84,17 @@ const UpdateEmail = ({ navigation }) => {
                 <ScrollView style={{marginTop: 20}}>
 
                     {/* Email Address */}
-                    <View style={styles.buttonContainer}>
+                    <View style={styles.inputContainer}>
                         <TextInput 
                             type='text'
                             placeholder='New Email'
                             placeholderTextColor='#34383D80'
-                            style={styles.formInput}
+                            style={styles.inputField}
                             autoCapitalize='none'
                             autocomplete='off'
-                            keyboardAppearance='dark'
+                            autoCorrect={false}
+                            clearButtonMode={'while-editing'}
+                            keyboardAppearance='light'
                             keyboardType='email-address'
                             onChangeText={(email) => setEmail(email)}
                             value={email}
@@ -85,9 +102,9 @@ const UpdateEmail = ({ navigation }) => {
                     </View>
 
                     {/* Password */}
-                    <View style={styles.buttonContainer}>
+                    <View style={styles.inputContainer}>
                         <TextInput
-                            style={styles.formInput}
+                            style={styles.inputField}
                             placeholder='Enter Password to Save Changes'
                             placeholderTextColor='#34383D80'
                             secureTextEntry={true}
@@ -96,16 +113,11 @@ const UpdateEmail = ({ navigation }) => {
                             autoCorrect={false}
                             clearButtonMode={'while-editing'}
                             returnKeyType={'done'}
-                            keyboardAppearance='dark'
+                            keyboardAppearance='light'
                             onChangeText={(password) => setPassword(password)}
                             value={password}
                         />
                     </View>
-
-                    {/* Conintue Button */}
-                    <TouchableOpacity style={styles.continueButton} onPress={onSubmit}>
-                        <Text style={styles.continueButtonText}>Save</Text>
-                    </TouchableOpacity>
                 </ScrollView>
             </View>
         </>

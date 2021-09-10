@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     // Body
     container: {
-        backgroundColor: '#ffffff90',
+        backgroundColor: '#fff',
         height: '100%',
     },
 
@@ -55,6 +55,21 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
         marginLeft: 12.5,
+    },
+    inputContainer: {
+        marginHorizontal: 20,
+        marginTop: 10,
+        borderRadius: 10,
+        height: 45,
+        flexDirection: "row",
+        backgroundColor: "#00000009",
+    },
+    inputField: {
+        paddingLeft: 12.5,
+        color: "#34383D",
+        fontSize: 16,
+        fontWeight: "500",
+        width: "100%",
     },
 
     // Update Payment Explainer

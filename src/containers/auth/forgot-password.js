@@ -12,7 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 import Feather from 'react-native-vector-icons/Feather';
 
 // Styles
-import styles from './auth-styles';
+import styles from './styles';
 // import { handlePasswordReset } from '../../firebase/firebase';
 
 
@@ -38,7 +38,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
                         name={'arrow-left'}
                         size={25}
                         style={{
-                            color: '#34383D80',
+                            color: '#34383D50',
                             marginTop: 40,
                             marginLeft: 20
                         }}
@@ -46,7 +46,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
                     />
                 }
                 centerComponent={
-                    <Image source={require('../../assets/favicon.jpg')} style={{width: 100, height: 100}} />
+                    <Image source={require('../../assets/favicon.png')} style={{width: 100, height: 100}} />
                 }
             />
 
@@ -59,31 +59,33 @@ const ForgotPasswordScreen = ({ navigation }) => {
                 {/* Email */}
                 <View style={styles.authFieldContainer}>
                     <View style={styles.inputContainer}>
-                        <Feather 
-                            name={'mail'}
+                        <Feather
+                            name={"mail"}
                             size={22.5}
-                            style={{alignSelf: 'center', marginHorizontal: 15, color:'#34383D80'}}
+                            style={{
+                                alignSelf: "center",
+                                marginHorizontal: 15,
+                                color: "#34383D50",
+                            }}
                         />
                         <TextInput
                             style={styles.inputField}
-                            placeholder='Email'
-                            placeholderTextColor='#34383D80'
-                            autoCapitalize='none'
-                            autoCompleteType='email'
+                            placeholder="Email"
+                            placeholderTextColor="#34383D50"
+                            autoCapitalize="none"
+                            autoCompleteType="email"
                             autoCorrect={false}
-                            clearButtonMode={'while-editing'}
-                            keyboardType={'email-address'}
+                            clearButtonMode={"while-editing"}
+                            keyboardType={"email-address"}
                             // onChangeText={(email) => setEmail(email)}
                             // value={email}
                         />
                     </View>
                 </View>
-                
+
                 {/* Sign In Button */}
-                <TouchableOpacity style={styles.continueButton} 
-                // onPress={onSubmit}
-                >
-                    <Text style={styles.submitText}>Submit</Text>
+                <TouchableOpacity style={{ backgroundColor: '#586D81', padding: 18, margin: 20, borderRadius: 10, alignItems: 'center' }}>
+                <Text style={{ fontSize: 16, fontWeight: '600', color: 'white'}}>SUBMIT</Text>
                 </TouchableOpacity>
             </View>
         </View>

@@ -74,7 +74,7 @@ const Dashboard = () => {
                     <Text style={styles.paymentDate}>01/01/2021</Text>
                 </View>
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Make a Payment</Text>
+                    <Text style={styles.buttonText}>MAKE A PAYMENT</Text>
                 </TouchableOpacity>
             </View>
             

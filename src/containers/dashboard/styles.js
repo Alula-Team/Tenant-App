@@ -3,23 +3,23 @@ import { StyleSheet, Dimensions } from 'react-native';
 const styles = StyleSheet.create({
     // Body
     container: {
-        backgroundColor: '#ffffff90',
+        backgroundColor: '#fff',
         height: '100%',
     },
     header: {
-        backgroundColor: '#232256',
+        backgroundColor: '#fff',
         height: 400,
         top: 0
     },
     greeting: {
-        color: '#fff',
+        color: '#34383D',
         top: 80,
         left: 30,
         fontSize: 20,
         fontWeight: '600'
     },
     amountDue: {
-        color: '#fff',
+        color: '#34383D',
         textAlign: 'center',
         top: 130,
         fontSize: 35,
@@ -27,27 +27,28 @@ const styles = StyleSheet.create({
     },
     headerSubText: {
         fontSize: 18,
-        color: '#ffffff90',
+        color: '#34383D80',
         textAlign: 'center',
         top: 180,
     },
     paymentDate: {
-        color: '#ffffff90',
+        color: '#34383D80',
         fontSize: 18,
         fontWeight: '500',
         textAlign: 'center',
         top: 180,
         marginLeft: 7
     },
-    button: {
-        backgroundColor: '#fff',
-        padding: 20,
-        marginHorizontal: 30,
-        borderRadius: 10,
+    button: { 
+        backgroundColor: '#586D81', 
+        padding: 18, 
+        margin: 20, 
+        borderRadius: 10, 
+        alignItems: 'center',
         top: 230
     },
     buttonText: {
-        color: '#232256',
+        color: '#fff',
         textAlign: 'center',
         fontSize: 18,
         fontWeight: '600'
